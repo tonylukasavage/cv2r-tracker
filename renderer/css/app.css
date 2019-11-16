@@ -1,0 +1,11 @@
+tr {
+	height: 40px;
+}
+
+.check-open {
+	background-color: #43A047;
+}
+
+.check-closed {
+	background-color: #C62828;
+}
