@@ -1,12 +1,14 @@
 # cv2r-tracker
 
+An auto-tracker for both items and check locations for [CV2R - Castlevania 2 Randomizer](). This will ONLY work with [fceux](http://www.fceux.com/web/home.html) currently, but other emulators may be supported in the future.
+
 ## Usage
 
 > NOT YET IMPLEMENTED, BINARIES COMING SOON
 
 ## Developer Setup
 
-This was a major pain in the ass, so just message me on our [discord](https://discord.gg/tuGjwHy) if you're brave enough to try and get stuck.
+This was a major pain in the ass, so just message me on our [discord](https://discord.gg/tuGjwHy) if you're brave enough to try and get stuck. It was difficult to get the right setup because your node.js version and architecture needs to match both the embedded electron node.js version for best results. Additionally, we're targeting [fceux](http://www.fceux.com/web/home.html) which is a 32bit architecture, so these all need to align to be able to read the fceux process's memory.
 
 ### Prereqs
 
