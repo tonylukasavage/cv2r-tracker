@@ -14,7 +14,7 @@ This was a major pain in the ass, so just message me on our [discord](https://di
 
 * Windows (will not work on any other OS)
 * node.js 10.11.0 32bit
-	* This version of node.js matches the version embedded in the version of electron used in this application. Other versions of 10.x may work, but they are untested. Any version of node >10 will crash during `npm install` step.
+	* This version of node.js matches the version embedded in the version of electron used in this application. Other versions of 10.x may work, but they are untested. Any version of node.js greater than 10.x will crash during `npm install` step.
 	* [nvm-windows](https://github.com/coreybutler/nvm-windows) makes it easy to install nodejs versions
 
 ### Installation
