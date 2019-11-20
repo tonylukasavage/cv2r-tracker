@@ -19,7 +19,7 @@ This was a major pain in the ass, so just message me on our [discord](https://di
 
 ### Installation
 
-Do not attempt to run `npm install` in the `cv2r-tracker` folder until you've executed the following steps:
+**DO NOT** attempt to run `npm install` in the `cv2r-tracker` folder until you've executed the following steps:
 
 1. Install current `python` from the [Microsoft Store](https://docs.python.org/3/using/windows.html#the-microsoft-store-package)
 2. Install node-gyp with `npm install -g node-gyp`
