@@ -1,5 +1,9 @@
 # cv2r-tracker
 
+## Usage
+
+> NOT YET IMPLEMENTED, BINARIES COMING SOON
+
 ## Developer Setup
 
 This was a major pain in the ass, so just message me on our [discord](https://discord.gg/tuGjwHy) if you're brave enough to try and get stuck.
