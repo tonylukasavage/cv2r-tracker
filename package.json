@@ -10,6 +10,7 @@
   "author": "BloodSweatAndCode",
   "license": "ISC",
   "dependencies": {
+    "jquery": "^3.4.1",
     "memoryjs": "^3.2.3"
   },
   "devDependencies": {

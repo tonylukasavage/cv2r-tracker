@@ -12,7 +12,8 @@ const items = [];
 	items.push({
 		name: weapon,
 		offset: 0x4A,
-		value: 1 << index
+		value: 1 << index,
+		isOwned: false
 	});
 });
 
@@ -29,7 +30,8 @@ const items = [];
 	items.push({
 		name: item,
 		offset: 0x91,
-		value: item === 'red crystal' ? 0x60 : 1 << index
+		value: item === 'red crystal' ? 0x60 : 1 << index,
+		isOwned: false
 	});
 });
 
@@ -42,7 +44,8 @@ const items = [];
 	const obj = {
 		name: carry,
 		offset: 0x92,
-		value: 1 << index
+		value: 1 << index,
+		isOwned: false
 	};
 	if (carry === 'laurels') { obj.count = 0x4C; }
 	if (carry === 'garlic') { obj.count = 0x4D; }
@@ -60,7 +63,8 @@ const items = [];
 		name: whip,
 		offset: 0x434,
 		value: index,
-		comparison: 'equal'
+		comparison: 'equal',
+		isOwned: whip === 'leather whip'
 	});
 });
 

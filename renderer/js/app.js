@@ -1,60 +1,24 @@
+const Emulator = require('./js/classes/Emulator');
 const items = require('./js/items');
-const memoryjs = require('memoryjs');
+const state = require('./js/state');
+const ui = require('./js/classes/UI');
 
-console.log(__dirname);
+// setup UI
+ui.setState(state);
 
-const processName = 'fceux.exe';
-const basePointer = 0x003B1388;
+// TODO: have some settings to configure chosen emulator
+const emu = new Emulator('fceux', 32);
+emu.connect();
 
-function normalizeHex(value) {
-	return (value < 0x10 ? '0' + value.toString(16) : value.toString(16)).toUpperCase();
-}
-
-function getPointer(po, addr) {
-	const { handle, modBaseAddr } = po;
-	let pointer = [];
-	for (let i = 0; i < 4; i++) {
-		const value = memoryjs.readMemory(
-			handle,
-			modBaseAddr + addr + i,
-			memoryjs.BYTE
+console.log('start loop...');
+setInterval(function() {
+	items.forEach(item => {
+		const byte = emu.getGameByte(item.offset);
+		const isOwned = !!(item.comparison === 'equal' ?
+			item.value === byte :
+			(item.value & byte) === item.value
 		);
-		pointer.push(normalizeHex(value));
-	}
-	pointer.reverse();
-	return parseInt(pointer.join(''), 16);
-}
+		state.setItem(item.name, isOwned);
+	});
+}, 1000);
 
-
-
-(async function() {
-	console.log(`Opening ${processName} process...`);
-	const po = memoryjs.openProcess(processName);
-	console.log(po);
-
-	const gamePointer = getPointer(po, basePointer);
-	console.log(gamePointer.toString(16));
-	function getByte(offset) {
-		return memoryjs.readMemory(po.handle, gamePointer + offset, memoryjs.BYTE);
-	}
-
-	console.log('start loop...');
-	setInterval(function() {
-		items.forEach(item => {
-			const byte = getByte(item.offset);
-			const isOwned = !!(item.comparison === 'equal' ?
-				item.value === byte :
-				(item.value & byte) === item.value
-			);
-			if (isOwned) {
-				console.log(item.name);
-			}
-		});
-	}, 1000);
-
-	// console.log({
-	// 	gamePointer,
-	// 	hp: (gamePointer + 0x80).toString(16)
-	// });
-	// console.log(getByte(0x80).toString(16));
-})();
