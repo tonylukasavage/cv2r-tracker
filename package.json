@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "electron main.js"
+    "start": "electron main.js",
+    "postinstall": "node --no-warnings tools\\node-gyp-fix.js && electron-rebuild"
   },
   "author": "BloodSweatAndCode",
   "license": "ISC",
