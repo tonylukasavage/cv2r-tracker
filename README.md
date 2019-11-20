@@ -1,6 +1,6 @@
 # cv2r-tracker
 
-An auto-tracker for both items and check locations for [CV2R - Castlevania 2 Randomizer](). This will ONLY work with [fceux](http://www.fceux.com/web/home.html) currently, but other emulators may be supported in the future.
+An auto-tracker for both items and check locations for [CV2R - Castlevania 2 Randomizer](https://cv2r.herokuapp.com/). This will ONLY work with [fceux](http://www.fceux.com/web/home.html) currently, but other emulators may be supported in the future.
 
 ## Usage
 
