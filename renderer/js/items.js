@@ -20,7 +20,7 @@ const items = [];
 [
 	'rib',
 	'heart',
-	'eye',
+	'eyeball',
 	'nail',
 	'ring',
 	'white crystal',

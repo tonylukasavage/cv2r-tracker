@@ -2,12 +2,14 @@ module.exports = {
 	'env': {
 		'commonjs': true,
 		'es6': true,
-		'node': true
+		'node': true,
+		'browser': true
 	},
 	'extends': 'eslint:recommended',
 	'globals': {
 		'Atomics': 'readonly',
-		'SharedArrayBuffer': 'readonly'
+		'SharedArrayBuffer': 'readonly',
+		'$': 'readonly'
 	},
 	'parserOptions': {
 		'ecmaVersion': 2018

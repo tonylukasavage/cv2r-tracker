@@ -1,3 +1,7 @@
+body {
+	background-color: black;
+}
+
 tr {
 	height: 40px;
 }
@@ -8,4 +12,26 @@ tr {
 
 .check-closed {
 	background-color: #C62828;
+}
+
+.item {
+	width: 32px;
+	height: 32px;
+	padding: 6px;
+}
+
+.item-owned {
+	opacity: 1;
+}
+
+.item-not-owned {
+	opacity: 0.25;
+}
+
+.item-container {
+	width: 100%;
+	flex-wrap: wrap;
+	position: fixed;
+	left: 0;
+	bottom: 0;
 }
