@@ -1,5 +1,8 @@
 const { app, BrowserWindow } = require('electron');
 
+// Have to do this otherwise OBS won't render it
+app.disableHardwareAcceleration();
+
 function createWindow () {
 	// Create the browser window.
 	let win = new BrowserWindow({
@@ -7,7 +10,9 @@ function createWindow () {
 		height: 600,
 		webPreferences: {
 			nodeIntegration: true
-		}
+		},
+		// transparent: true,
+		frame: true
 	});
 
 	// and load the index.html of the app.

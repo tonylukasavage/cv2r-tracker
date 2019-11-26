@@ -61,6 +61,7 @@ const items = [];
 ].forEach((whip, index) => {
 	items.push({
 		name: whip,
+		type: 'whip',
 		offset: 0x434,
 		value: index,
 		comparison: 'equal',
